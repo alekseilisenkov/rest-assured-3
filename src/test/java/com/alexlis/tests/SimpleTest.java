@@ -1,8 +1,7 @@
 package com.alexlis.tests;
 
 import com.alexlis.filters.CustomLogFilter;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Tag;
@@ -15,9 +14,11 @@ import static org.hamcrest.Matchers.*;
 
 @Feature("API")
 @Story("Tests on DemoQA")
+@Epic("Simple tests")
 public class SimpleTest extends TestBase {
 
     @Test
+    @Severity(SeverityLevel.TRIVIAL)
     @Tag("books")
     void getBooksTest() {
         given()
@@ -30,6 +31,7 @@ public class SimpleTest extends TestBase {
     }
 
     @Test
+    @Severity(SeverityLevel.BLOCKER)
     @Tag("books")
     void getBooksWithAllLogsTest() {
         given()
@@ -41,6 +43,7 @@ public class SimpleTest extends TestBase {
     }
 
     @Test
+    @Severity(SeverityLevel.BLOCKER)
     @Tag("books")
     void getBooksWithSelectedLogsTest() {
         given()
@@ -53,6 +56,7 @@ public class SimpleTest extends TestBase {
     }
 
     @Test
+    @Severity(SeverityLevel.CRITICAL)
     @Tag("demoqa")
     void checkAuthorizedOfUserWithAllureTest() {
         given()
@@ -69,6 +73,7 @@ public class SimpleTest extends TestBase {
     }
 
     @Test
+    @Severity(SeverityLevel.CRITICAL)
     @Tag("demoqa")
     void checkExistingOfUserWithCustomFiltersTest() {
         given()
@@ -86,6 +91,7 @@ public class SimpleTest extends TestBase {
     }
 
     @Test
+    @Severity(SeverityLevel.CRITICAL)
     @Tag("demoqa")
     void generateTokenWithSchemaAssertTest() {
         given()
