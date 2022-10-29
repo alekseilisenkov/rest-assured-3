@@ -54,38 +54,35 @@ public class SimpleTest extends TestBase {
 
     @Test
     @Tag("demoqa")
-    void generateTokenWithAllureTest() {
+    void checkAuthorizedOfUserWithAllureTest() {
         given()
                 .filter(new AllureRestAssured())
-                .log().all()
+                .log().uri()
+                .log().body()
                 .body(getDataBody())
                 .contentType(ContentType.JSON)
                 .when()
-                .log().uri()
-                .log().body()
-                .post("Account/v1/GenerateToken")
+                .post("Account/v1/Authorized")
                 .then()
                 .log().body()
-                .body("status", is("Success"))
-                .body("result", is("User authorized successfully."));
+                .statusCode(200);
     }
 
     @Test
     @Tag("demoqa")
-    void generateTokenWithCustomFiltersTest() {
+    void checkExistingOfUserWithCustomFiltersTest() {
         given()
                 .filter(CustomLogFilter.customLogFilter().withCustomTemplates())
-                .log().all()
+                .log().uri()
+                .log().body()
                 .body(getDataBody())
                 .contentType(ContentType.JSON)
                 .when()
-                .log().uri()
-                .log().body()
-                .post("Account/v1/GenerateToken")
+                .post("Account/v1/User")
                 .then()
                 .log().body()
-                .body("status", is("Success"))
-                .body("result", is("User authorized successfully."));
+                .body("message", is("User exists!"))
+                .body("code", is("1204"));
     }
 
     @Test
@@ -102,8 +99,6 @@ public class SimpleTest extends TestBase {
                 .post("Account/v1/GenerateToken")
                 .then()
                 .log().body()
-                .body(matchesJsonSchemaInClasspath("schemas/GenerateTokenSchema.json"))
-                .body("status", is("Success"))
-                .body("result", is("User authorized successfully."));
+                .body(matchesJsonSchemaInClasspath("schemas/GenerateTokenSchema.json"));
     }
 }
