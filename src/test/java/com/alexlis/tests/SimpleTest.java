@@ -102,8 +102,8 @@ public class SimpleTest extends TestBase {
                 .post("Account/v1/GenerateToken")
                 .then()
                 .log().body()
-                .body("status", is("Success"))
                 .body(matchesJsonSchemaInClasspath("schemas/GenerateTokenSchema.json"))
+                .body("status", is("Success"))
                 .body("result", is("User authorized successfully."));
     }
 }
