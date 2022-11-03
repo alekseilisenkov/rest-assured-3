@@ -1,6 +1,7 @@
-package com.alexlis.tests;
+package com.alexlis.tests.simple;
 
 import com.alexlis.filters.CustomLogFilter;
+import com.alexlis.tests.TestBase;
 import io.qameta.allure.*;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.http.ContentType;

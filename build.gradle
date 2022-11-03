@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'io.qameta.allure' version '2.8.1'
+    id "io.freefair.lombok" version "6.0.0-m2"
 }
 
 repositories {
@@ -27,12 +28,14 @@ dependencies {
             "com.codeborne:selenide:$selenideVersion",
             "io.qameta.allure:allure-rest-assured:$allureVersion",
             "io.rest-assured:json-schema-validator:4.3.1",
+            "com.fasterxml.jackson.core:jackson-databind:2.11.2",
             'org.aeonbits.owner:owner:1.0.12',
             "org.assertj:assertj-core:3.23.1",
             "org.slf4j:slf4j-simple:1.7.29",
             "org.junit.jupiter:junit-jupiter-api:$junitVersion",
             "io.qameta.allure:allure-selenide:2.19.0",
             "io.rest-assured:rest-assured:5.2.0",
+            "com.github.javafaker:javafaker:1.0.2",
             "org.aspectj:aspectjweaver:1.9.6"
     )
     testRuntimeOnly(

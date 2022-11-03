@@ -18,6 +18,7 @@ public class TestBase {
 
     @BeforeAll
     public static void setting() {
+
         MainConfig config = ConfigFactory.create(MainConfig.class, System.getProperties());
         RestAssured.baseURI = config.getApiUri();
         Configuration.browserSize = config.getBrowserSize();
