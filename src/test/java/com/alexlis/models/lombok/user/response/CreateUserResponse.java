@@ -1,4 +1,4 @@
-package com.alexlis.models.lombok.user.body;
+package com.alexlis.models.lombok.user.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

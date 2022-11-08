@@ -1,7 +1,7 @@
-package com.alexlis.models.lombok.user;
+package com.alexlis.client;
 
 import com.alexlis.helper.EndPoints;
-import com.alexlis.models.lombok.user.body.CreateUserRequest;
+import com.alexlis.models.lombok.user.request.CreateUserRequest;
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;

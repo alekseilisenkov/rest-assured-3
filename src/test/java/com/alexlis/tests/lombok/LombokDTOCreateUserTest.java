@@ -1,9 +1,9 @@
 package com.alexlis.tests.lombok;
 
 import com.alexlis.helper.BodyGenerator;
-import com.alexlis.models.lombok.user.UserClient;
-import com.alexlis.models.lombok.user.body.CreateUserRequest;
-import com.alexlis.models.lombok.user.body.CreateUserResponse;
+import com.alexlis.client.UserClient;
+import com.alexlis.models.lombok.user.request.CreateUserRequest;
+import com.alexlis.models.lombok.user.response.CreateUserResponse;
 import com.alexlis.tests.TestBase;
 import io.qameta.allure.Epic;
 import io.restassured.builder.RequestSpecBuilder;

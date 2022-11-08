@@ -1,6 +1,6 @@
 package com.alexlis.helper;
 
-import com.alexlis.models.lombok.user.body.CreateUserRequest;
+import com.alexlis.models.lombok.user.request.CreateUserRequest;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

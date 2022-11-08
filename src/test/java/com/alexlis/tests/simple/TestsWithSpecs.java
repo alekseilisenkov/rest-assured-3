@@ -4,6 +4,7 @@ import com.alexlis.helper.EndPoints;
 import com.alexlis.models.simple.BooksData;
 import com.alexlis.specs.Specs;
 import com.alexlis.tests.TestBase;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -28,9 +29,11 @@ public class TestsWithSpecs extends TestBase {
                 .log().body()
                 .extract().as(BooksData.class);
 
-        assertEquals("Richard E. Silverman", booksData.getBooks().get(0).getAuthor());
-        assertEquals("A Working Introduction", booksData.getBooks().get(0).getSubTitle());
-        assertEquals("9781449331818", booksData.getBooks().get(1).getIsbn());
+        Assertions.assertAll(
+                () -> assertEquals("Richard E. Silverman", booksData.getBooks().get(0).getAuthor()),
+                () -> assertEquals("A Working Introduction", booksData.getBooks().get(0).getSubTitle()),
+                () -> assertEquals("9781449331818", booksData.getBooks().get(1).getIsbn())
+        );
     }
 
     @Test

@@ -1,4 +1,4 @@
-package com.alexlis.models.lombok.user.body;
+package com.alexlis.models.lombok.user.request;
 
 import com.alexlis.helper.FakerHelper;
 import lombok.Builder;
