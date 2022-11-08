@@ -23,7 +23,6 @@ public class GroovyTests extends TestBase {
 
     @Test
     public void checkEmailUsingGroovy() {
-        // @formatter:off
         given()
                 .spec(reqresRequest)
                 .when()
@@ -32,6 +31,5 @@ public class GroovyTests extends TestBase {
                 .log().body()
                 .body("data.findAll{it.email =~/.*?@reqres.in/}.email.flatten()",
                         hasItem("eve.holt@reqres.in"));
-        // @formatter:on
     }
 }
