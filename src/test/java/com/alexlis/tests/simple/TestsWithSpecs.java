@@ -45,8 +45,10 @@ public class TestsWithSpecs extends TestBase {
                 .log().body()
                 .extract().as(BooksData.class);
 
-       assertEquals("9781449325862", booksData.getIsbn());
-       assertEquals("Git Pocket Guide", booksData.getTitle());
-       assertEquals("Richard E. Silverman", booksData.getAuthor());
+        Assertions.assertAll(
+                () -> assertEquals("9781449325862", booksData.getIsbn()),
+                () -> assertEquals("Git Pocket Guide", booksData.getTitle()),
+                () -> assertEquals("Richard E. Silverman", booksData.getAuthor())
+        );
     }
 }
