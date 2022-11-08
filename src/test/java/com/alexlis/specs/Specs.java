@@ -21,4 +21,10 @@ public class Specs {
             .expectStatusCode(201)
             .log(LogDetail.BODY)
             .build();
+
+    public static RequestSpecification reqresRequest = with()
+            .baseUri("https://reqres.in")
+            .basePath("/api")
+            .log().all()
+            .contentType(ContentType.JSON);
 }
